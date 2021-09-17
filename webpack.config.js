@@ -12,7 +12,7 @@ const cssConfig = {
   output: {
     // clean: true,
     filename: "temp/[name].js",
-    path: path.resolve(__dirname, "static/"),
+    path: path.resolve(__dirname, "build/static/"),
   },
   optimization: {
     minimizer: [new CssMinimizerPlugin({})],
@@ -54,7 +54,7 @@ const jsConfig = {
   },
   output: {
     filename: "js/[name].js",
-    path: path.resolve(__dirname, "static/"),
+    path: path.resolve(__dirname, "build/static/"),
   },
   module: {
     rules: [
