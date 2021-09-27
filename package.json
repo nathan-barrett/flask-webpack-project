@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=development && python src/freeze.py",
-    "watch": "webpack --mode=development --watch && python src/app.py"
+    "init": "cd ~/desktop/repos/flask-project && . venv/bin/activate",
+    "start": "concurrently --kill-others \"python src/app.py\" \"npm run watch\"",
+    "start:static": "concurrently --kill-others \"python freeze.py\" \"npm run watch\"",
+    "build": "webpack --mode=production && python src/freeze.py",
+    "freeze": "python src/freeze.py",
+    "watch": "webpack --mode=development --watch"
   },
   "author": "",
   "license": "ISC",
@@ -25,5 +28,8 @@
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0",
     "webpack-remove-empty-scripts": "^0.7.1"
+  },
+  "dependencies": {
+    "concurrently": "^6.2.1"
   }
 }

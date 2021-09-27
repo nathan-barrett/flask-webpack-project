@@ -7,7 +7,7 @@ const isDevelopment = process.env.NODE_ENV === "development";
 
 const cssConfig = {
   entry: {
-    styles: "./src/static/css/styles.scss",
+    styles: "./static/css/styles.scss",
   },
   output: {
     // clean: true,
@@ -50,7 +50,7 @@ const cssConfig = {
 
 const jsConfig = {
   entry: {
-    index: "./src/static/js/index.js",
+    index: "./static/js/index.js",
   },
   output: {
     filename: "js/[name].js",
